@@ -1,4 +1,5 @@
-# iOSInterview
-iOS 面试题整理记录
+# blog
+
+记录blog中的文章
 
 [博客主页](http://huangyc.cn)
