@@ -1,8 +1,7 @@
 import utilStyles from "./page.module.css";
-import { getAllPostIds, getPostData } from "@/app/api/posts";
+import { getPostData } from "@/api/posts";
 import Date from "@/components/date";
 export default async function Post({ params }) {
-  console.log(params);
   const postData = await getPostData(params.id);
   return (
     <>

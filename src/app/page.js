@@ -2,7 +2,6 @@ import homeStyle from "./page.module.css";
 import Image from "next/image";
 import Link from "next/link";
 export default function Index() {
-  // const allPostsData = getSortedPostsData();
   return (
     <div id="main">
       <div className={homeStyle.headBg}>
@@ -34,12 +33,3 @@ export default function Index() {
     </div>
   );
 }
-
-// export async function getStaticProps() {
-//   const allPostsData = getSortedPostsData();
-//   return {
-//     props: {
-//       allPostsData,
-//     },
-//   };
-// }
