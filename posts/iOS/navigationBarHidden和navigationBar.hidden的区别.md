@@ -1,3 +1,9 @@
+---
+title: "navigationBarHidden和navigationBar.hidden的区别"
+date: "2023-03-16"
+id: '2023031615'
+---
+
 ### 相同点：
 
 两者的共同作用都是隐藏导航栏

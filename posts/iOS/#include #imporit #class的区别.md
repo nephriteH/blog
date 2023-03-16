@@ -1,3 +1,9 @@
+---
+title: "#include #imporit #class的区别"
+date: "2023-03-16"
+id: '2023031611'
+---
+
 ### 1. #import 和 #include 区别
 > 简述答案： `#import和#include都可以将头文件引入到我们需要的文件中，但是`#include`会造成重复引用的问题。因为`#include`相当于简单的拷贝头文件中的内容，所以有可能会造成重复定义的错误；`
 

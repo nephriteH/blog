@@ -1,3 +1,9 @@
+---
+title: "nginx安装"
+date: "2023-03-16"
+id: '2023031607'
+---
+
 ### 1. 安装gcc环境
 ```
 yum install gcc-c++

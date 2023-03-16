@@ -1,3 +1,9 @@
+---
+title: "iOS 制作pod私有库 详细步骤"
+date: "2023-03-16"
+id: '2023031605'
+---
+
 #### 什么是CocoaPods
 
 CocoaPods负责管理iOS项目中第三方框架。CocoaPods的项目源码在Github上管理。项目从2011年8月12日开始,CocoaPods的出现使得我们可以节省设置和更新第三方开源库的时间。

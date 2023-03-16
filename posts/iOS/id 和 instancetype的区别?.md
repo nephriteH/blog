@@ -1,3 +1,9 @@
+---
+title: "id 和 instancetype的区别?"
+date: "2023-03-16"
+id: '2023031614'
+---
+
 # id 和 instancetype的区别?
 
 > 简述答案：instancetype是clang 3.5开始提供的一个关键字，具备对象类型检测功能。可以检测出应该返回什么类型。跟id类似，代指未知类型。区别是instancetype只能用于方法返回值，而id既可以作为返回值也可以定义变量。

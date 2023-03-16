@@ -1,3 +1,9 @@
+---
+title: "node安装"
+date: "2023-03-16"
+id: '2023031608'
+---
+
 ### 1. 下载node安装包
 
 > 安装包最新地址在[node官网](https://nodejs.org/zh-cn/download/)查询 

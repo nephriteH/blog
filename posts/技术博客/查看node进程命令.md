@@ -1,3 +1,9 @@
+---
+title: "查看node进程命令"
+date: "2023-03-16"
+id: '2023031602'
+---
+
 <p>查看</p>
 
 <pre class="wp-block-code"><code>ps -ef|grep node</code></pre>
