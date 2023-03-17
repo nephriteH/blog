@@ -16,7 +16,9 @@ export default async function Post({ params }) {
     if (preMatterResult) {
       return (
         <Link href={`/posts/${preMatterResult.data.id}`}>
-          <div>上一篇文章</div>
+          <div>
+            <span className="material-icons">arrow_back</span> 上一篇文章
+          </div>
         </Link>
       );
     }
@@ -26,7 +28,9 @@ export default async function Post({ params }) {
     if (nextMatterResult) {
       return (
         <Link href={`/posts/${nextMatterResult.data.id}`}>
-          <div>下一篇文章</div>
+          <div>
+            下一篇文章<span className="material-icons">arrow_forward</span>
+          </div>
         </Link>
       );
     }

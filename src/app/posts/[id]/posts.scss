@@ -44,15 +44,17 @@ article {
     }
   }
 
-  ul {
+  ul,
+  ol {
     margin: 10px 30px;
     padding: 10px 30px;
     border-radius: 6px;
     background-color: rgba(0, 0, 0, 0.8);
     color: #fff;
     font-size: 15px;
+    line-height: 22px;
     li {
-      margin: 5px;
+      margin: 15px 5px;
       &::marker {
         color: #e67249;
       }
@@ -82,24 +84,6 @@ article {
       left: 0;
       border-radius: 5px;
       box-shadow: 0 2px 12px rgba(255, 78, 106, 0.85);
-    }
-  }
-  ol {
-    margin: 10px 30px;
-    padding: 10px 30px;
-    border-radius: 6px;
-    background-color: rgba(0, 0, 0, 0.8);
-    color: #fff;
-    font-size: 15px;
-    li {
-      margin: 5px;
-      &::marker {
-        color: #e67249;
-      }
-      code {
-        color: #e67249;
-        font-size: 16px;
-      }
     }
   }
 }

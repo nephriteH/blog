@@ -1,0 +1,10 @@
+.time {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  &::before {
+    font-family: var(--font-material-icons);
+    content: "schedule";
+    margin-right: 2px;
+  }
+}
