@@ -1,8 +1,8 @@
-import { getSortedPostsData } from "@/api/posts";
+import { getSortedPostsDataFromCache } from "@/api/posts";
 import Link from "next/link";
 
-export default function Index() {
-  const allPostsData = getSortedPostsData();
+export default async function Index() {
+  const allPostsData = await getSortedPostsDataFromCache();
   return (
     <div id="main">
       {allPostsData.map((e) => {
@@ -19,12 +19,3 @@ export default function Index() {
     </div>
   );
 }
-
-// export async function getStaticProps() {
-//   const allPostsData = getSortedPostsData();
-//   return {
-//     props: {
-//       allPostsData,
-//     },
-//   };
-// }
