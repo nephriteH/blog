@@ -5,6 +5,8 @@
 
 &emsp;&emsp;由此产生了搭建多页面项目的想法。
 
+&emsp;&emsp;[项目git地址](https://github.com/nephriteH/topaz-mpa)
+
 ## 技术栈
 
 [vite](https://cn.vite.dev/guide/)+[vue3](https://vuejs.org/)+[ts](https://www.tslang.cn/)+[eslint](https://eslint.org/)+[prettier](https://prettier.io/)
@@ -142,7 +144,7 @@ server: {
 
 脚本使用的是node.js，主要使用的是[fs模块](https://nodejs.cn/api/fs.html)，操作文件夹及文件。其中各种方法的含义自行查询
 
-#### 1. 将scripts文件夹复制到自己的项目中 [git地址]()
+#### 1. 将scripts文件夹复制到自己的项目中 [git地址](https://github.com/nephriteH/topaz-mpa)
 #### 2. package.json中添加命令
    ```json
     // package.json
@@ -380,7 +382,7 @@ npm run build-all;
 
 > dev所有页面就是root配置成项目根目录即可，其实第四步里已经实现了`npm run dev`启动所有页面了。
 > 
-> 如果想严谨一点，比如必须`npm run dev-all`，可以改造一下`getEnterRoot()`方法。将`npm_lifecycle_event === 'dev'`改为`npm_lifecycle_event === 'dev-all'`
+> 如果想严谨一点，比如必须`npm run dev-all`，可以改造一下`getBuildEnterPages`和`getEnterRoot()`方法。
 >
 > 并在package.json中添加命令 `"dev-all": "vite"`
 
@@ -393,6 +395,31 @@ npm run build-all;
   }
 ```
 ```js
+const getBuildEnterPages = () => {
+  if (npm_lifecycle_event === 'dev-all') {
+    return {
+      [npm_config_page]: resolve(__dirname)
+    };
+  }
+  if (!npm_config_page && npm_lifecycle_event !== 'dev') {
+    errorLog('请在命令行后以 `--page=页面目录` 格式指定页面目录！');
+    process.exit();
+  }
+  if (npm_lifecycle_event === 'build') {
+    infoLog('正在打包');
+  }
+  // 打包指定页面，遍历pages.json，判断页面是否存在
+  const filterArr = pages.filter(
+    (item) => item.chunk.toLowerCase() == npm_config_page.toLowerCase()
+  );
+  if (!filterArr.length && npm_lifecycle_event !== 'dev') {
+    errorLog('不存在此页面，请检查页面目录！');
+    process.exit();
+  }
+  return {
+    [npm_config_page]: resolve(__dirname, `src/pages/${npm_config_page}/index.html`)
+  };
+};
 const getEnterRoot = () => {
   // 如果是dev-all，则返回整个项目的根目录
   if (!npm_config_page && npm_lifecycle_event === 'dev-all') {
@@ -468,26 +495,4 @@ const getEnterRoot = () => {
 &emsp;&emsp; [https://juejin.cn/post/7223286759630127159#heading-23](https://juejin.cn/post/7223286759630127159#heading-23);
 
 &emsp;&emsp; 这篇文章写的很详细，但是吐槽一下：内容太多了，除了多页面项目的搭建，还加了一些其他方面的东西，有点冗余。其实可以分多篇文章介绍的。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
